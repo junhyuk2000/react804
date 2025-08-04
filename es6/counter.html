@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카운터 앱</title>
+</head>
+
+<body>
+  <button id="add_button"> 1씩증가</button>
+  <button id="button"> 1씩감소</button>
+  <button id="reset"> 초기화 </button>
+  <script>
+    const addBtn = document.getElementById('add_button');
+    const btn = document.getElementById('button');
+    const reset = document.getElementById('reset');
+    const p = document.createElement('p');
+    p.textContent = '카운트: 0';
+    const pShow = () => {
+      p.textContent = '카운트: ' + count;
+    }
+    document.body.appendChild(p);
+
+    let count = 0;
+    addBtn.addEventListener('click', () => {
+      count++;
+      pShow();
+    });
+    btn.addEventListener('click', () => {
+      count--;
+      pShow();
+    });
+    reset.addEventListener('click', () => {
+      count = 0;
+      pShow();
+    });
+  </script>
+</body>
+
+</html>
