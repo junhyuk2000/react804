@@ -1,4 +1,4 @@
-export default function SubPage() {
+export default function Subpage() {
   return (
     <div>
       <h1>서브 페이지</h1>

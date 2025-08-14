@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Mainpage from "./pages/MainPage";
-import Subpage from "./pages/SubPage";
+import Mainpage from "./page/Mainpage";
+import Subpage from "./page/Subpage";
 
 function App() {
   return (
     <BrowserRouter>
-      <Link to="/"></Link>
-      <Link to="/sub"></Link>
+      <Link to="/">메인</Link>
+      <Link to="/sub">서브</Link>
       <Routes>
         <Route path="/" element={<Mainpage />}></Route>
         <Route path="/sub" element={<Subpage />}></Route>
