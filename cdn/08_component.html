@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>JSX</title>
+    <link rel="stylesheet" href="App.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App({ name, age, isAdult }) {
+        const handleEvent = () => setCount(count + 1);
+        const [count, setCount] = useState(0);
+
+        return (
+          <>
+            <h1>
+              안녕하세요, {age}세 {name}님! {isAdult ? "성인" : "학생"}
+            </h1>
+            <button onClick={handleEvent}>{count}</button>
+          </>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(
+        <>
+          <App name="철수" age="19" isAdult="true" />
+        </>
+      );
+    </script>
+  </body>
+</html>

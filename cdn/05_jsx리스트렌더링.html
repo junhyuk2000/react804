@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>JSX</title>
+    <link rel="stylesheet" href="App.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const fruits = ["🍎 Apple", "🍌 Banana", "🍇 Grape"];
+
+      function FruitList() {
+        return (
+          <ul>
+            {fruits.map((fruit, index) => (
+              <li key={index}>{fruit}</li>
+            ))}
+          </ul>
+        );
+      }
+
+      const users = [
+        { id: "u1", name: "Alice" },
+        { id: "u2", name: "Bob" },
+      ];
+
+      function UserList() {
+        return (
+          <ul>
+            {users.map((user) => (
+              <li key={user.id}>{user.name}</li>
+            ))}
+          </ul>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(
+        <>
+          <FruitList />
+          <UserList />
+        </>
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>JSX</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const name = "React";
+      const isLoggedIn = true;
+      const fruits = ["Apple", "Banana", "Cherry"];
+
+      const imgUrl =
+        "https://cdn.crowdpic.net/detail-thumb/thumb_d_2F583E5543F7E19139C6FCFFBF9607A6.jpg";
+
+      const element = (
+        <div>
+          {name}배우기
+          {1 + 2}
+          <br />
+          {name.toUpperCase()}
+          {isLoggedIn ? "Welcome" : "Please log in"}
+          <ul>
+            {fruits.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <img src={imgUrl} alt="Example" />
+        </div>
+      );
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(element);
+    </script>
+  </body>
+</html>
